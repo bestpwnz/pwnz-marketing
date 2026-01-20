@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | NodeZero Recruitment</title>
+  <meta name="description" content="Contact NodeZero Recruitment. Share your hiring needs or your candidate profile and we’ll respond quickly.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="NodeZero Recruitment home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-text">NodeZero Recruitment</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="clients.html">For Clients</a>
+        <a class="nav-link" href="candidates.html">For Candidates</a>
+        <a class="nav-link" href="process.html">Our Process</a>
+        <a class="nav-link nav-cta is-active" href="contact.html" aria-current="page">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-head">
+      <div class="container">
+        <p class="eyebrow">Contact</p>
+        <h1>Start with a short message.</h1>
+        <p class="kicker">
+          Tell us what you’re looking for—hiring support or a new opportunity. We’ll respond with next steps and a brief set of clarifying
+          questions.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="grid-3">
+          <article class="card">
+            <h3>Email</h3>
+            <p class="muted">hello@nodezero-recruitment.example</p>
+          </article>
+          <article class="card">
+            <h3>Phone</h3>
+            <p class="muted">+00 000 000 000</p>
+          </article>
+          <article class="card">
+            <h3>Location</h3>
+            <p class="muted">Your City</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-head">
+          <h2>Inquiry form</h2>
+          <p class="muted">This form is static (no backend). You can connect it later if needed.</p>
+        </div>
+
+        <form class="form" action="#" method="post">
+          <div class="field">
+            <label for="name">Name</label>
+            <input id="name" name="name" autocomplete="name" required>
+          </div>
+
+          <div class="field">
+            <label for="company">Company (optional)</label>
+            <input id="company" name="company" autocomplete="organization">
+          </div>
+
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required>
+          </div>
+
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required placeholder="Tell us about the role, timeline, and what “ideal fit” means for you (or tell us what you’re looking for as a candidate)."></textarea>
+          </div>
+
+          <button class="btn btn-primary" type="submit">Send message</button>
+          <p class="form-note muted small">Typical response time: 1–2 business days.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <div class="brand-row">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span class="brand-text">NodeZero Recruitment</span>
+        </div>
+        <p class="muted">Clean recruitment. Clear outcomes.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="clients.html">For Clients</a>
+        <a href="candidates.html">For Candidates</a>
+        <a href="process.html">Our Process</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p class="muted small">© <span id="year">2026</span> NodeZero Recruitment. All rights reserved.</p>
+    </div>
+    <script>
+      document.getElementById("year").textContent = String(new Date().getFullYear());
+    </script>
+  </footer>
+</body>
+</html>
