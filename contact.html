@@ -43,7 +43,7 @@
         <div class="grid-3">
           <article class="card">
             <h3>Email</h3>
-            <p class="muted">hello@nodezero-recruitment.example</p>
+            <p class="muted">example@gmail.com</p>
           </article>
           <article class="card">
             <h3>Phone</h3>
@@ -61,10 +61,15 @@
       <div class="container">
         <div class="section-head">
           <h2>Inquiry form</h2>
-          <p class="muted">This form is static (no backend). You can connect it later if needed.</p>
+          <p class="muted">Send your message securely via Web3Forms.</p>
         </div>
 
-        <form class="form" action="#" method="post">
+        <form class="form" action="https://api.web3forms.com/submit" method="post">
+          <input type="hidden" name="access_key" value="f5156e24-22ba-4a91-a3f7-bd3c04653c0e">
+          <input type="hidden" name="subject" value="New inquiry — NodeZero Recruitment">
+          <input type="hidden" name="from_name" value="NodeZero Recruitment website">
+          <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none">
+
           <div class="field">
             <label for="name">Name</label>
             <input id="name" name="name" autocomplete="name" required>
