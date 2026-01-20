@@ -223,6 +223,11 @@ p{ margin: 0 0 12px; }
   grid-template-columns: repeat(3, 1fr);
   gap: 14px;
 }
+.grid-5{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 14px;
+}
 .card{
   background: rgba(12,19,26,.66);
   border: 1px solid rgba(234,241,247,.12);
@@ -317,5 +322,6 @@ input:focus, textarea:focus{
 @media (max-width: 900px){
   .hero-grid{ grid-template-columns: 1fr; }
   .grid-3{ grid-template-columns: 1fr; }
+  .grid-5{ grid-template-columns: 1fr; }
   .header-inner{ align-items: flex-start; }
 }
