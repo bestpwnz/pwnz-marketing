@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact | NodeZero Recruitment</title>
-  <meta name="description" content="Contact NodeZero Recruitment. Share your hiring needs or your candidate profile and we’ll respond quickly.">
+  <meta name="description" content="Contact NodeZero Recruitment. Share your hiring needs or your candidate profile and we'll respond quickly.">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://api.web3forms.com; form-action 'self' https://api.web3forms.com; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; upgrade-insecure-requests">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
@@ -32,72 +32,67 @@
   </header>
 
   <main id="main">
-    <section class="page-head">
+    <section class="section contact-grid-section">
       <div class="container">
-        <p class="eyebrow">Contact</p>
-        <h1>Start with a short message.</h1>
-        <p class="kicker">
-          Tell us what you’re looking for, hiring support or a new opportunity. We’ll respond with next steps and a brief set of clarifying
-          questions.
-        </p>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="grid-3">
-          <article class="card">
-            <h3>Email</h3>
-            <p class="muted">example@gmail.com</p>
-          </article>
-          <article class="card">
-            <h3>Phone</h3>
-            <p class="muted">+00 000 000 000</p>
-          </article>
-          <article class="card">
-            <h3>Location</h3>
-            <p class="muted">Your Country</p>
-          </article>
+        <div class="contact-header">
+          <p class="eyebrow">Contact</p>
+          <h1>Get in touch</h1>
+          <p class="kicker">
+            Tell us what you're looking for, hiring support or a new opportunity. We'll respond with next steps and a brief set of clarifying
+            questions.
+          </p>
         </div>
-      </div>
-    </section>
+        <div class="contact-grid">
+          <div class="contact-left">
+            <div class="contact-pills">
+              <div class="contact-pill">
+                <div class="contact-pill-label">Email us</div>
+                <a href="mailto:vantagerecruitment@proton.me" class="contact-pill-value">vantagerecruitment@proton.me</a>
+              </div>
+              <div class="contact-pill">
+                <div class="contact-pill-label">Instagram</div>
+                <a href="https://instagram.com" target="_blank" rel="noreferrer noopener" class="contact-pill-value">Follow us</a>
+              </div>
+              <div class="contact-pill">
+                <div class="contact-pill-label">Twitter</div>
+                <a href="https://twitter.com" target="_blank" rel="noreferrer noopener" class="contact-pill-value">Follow us @handle</a>
+              </div>
+            </div>
+          </div>
 
-    <section class="section section-alt">
-      <div class="container">
-        <div class="section-head">
-          <h2>Inquiry form</h2>
-          <p class="muted">Send your message securely via Web3Forms.</p>
-        </div>
+          <div class="contact-right">
 
-        <form class="form" action="https://api.web3forms.com/submit" method="post">
-          <input type="hidden" name="access_key" value="f5156e24-22ba-4a91-a3f7-bd3c04653c0e">
-          <input type="hidden" name="subject" value="New inquiry — NodeZero Recruitment">
-          <input type="hidden" name="from_name" value="NodeZero Recruitment website">
-          <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none">
 
-          <div class="field">
-            <label for="name">Name</label>
-            <input id="name" name="name" autocomplete="name" required>
+            <form class="form" action="https://api.web3forms.com/submit" method="post">
+              <input type="hidden" name="access_key" value="f5156e24-22ba-4a91-a3f7-bd3c04653c0e">
+              <input type="hidden" name="subject" value="New inquiry — NodeZero Recruitment">
+              <input type="hidden" name="from_name" value="NodeZero Recruitment website">
+              <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none">
+
+              <div class="field">
+            <label for="name">Name *</label>
+            <input id="name" name="name" autocomplete="name" required placeholder="Enter your full name">
           </div>
 
           <div class="field">
             <label for="company">Company (optional)</label>
-            <input id="company" name="company" autocomplete="organization">
+            <input id="company" name="company" autocomplete="organization" placeholder="Enter your company or organization">
           </div>
 
           <div class="field">
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" autocomplete="email" required>
+            <label for="email">Email *</label>
+            <input id="email" name="email" type="email" autocomplete="email" required placeholder="Enter your email">
           </div>
 
           <div class="field">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" required placeholder="Tell us about the role, timeline, and what “ideal fit” means for you (or tell us what you’re looking for as a candidate)."></textarea>
+            <label for="message">Message *</label>
+            <textarea id="message" name="message" required placeholder="Tell us about the role, timeline, and what ideal fit means for you (or tell us what you're looking for as a candidate)."></textarea>
           </div>
 
-          <button class="btn btn-primary" type="submit">Send message</button>
-          <p class="form-note muted small">Typical response time: 1–2 business days.</p>
-        </form>
+              <button class="btn btn-primary" type="submit">Submit</button>
+            </form>
+          </div>
+        </div>
       </div>
     </section>
   </main>
@@ -111,12 +106,14 @@
         </div>
         <p class="muted">Clean recruitment. Clear outcomes.</p>
       </div>
-      <div class="footer-links">
-        <a href="index.html">Home</a>
-        <a href="clients.html">For Clients</a>
-        <a href="candidates.html">For Candidates</a>
-        <a href="process.html">Our Process</a>
-        <a href="privacy.html">Privacy Policy</a>
+      <div class="footer-right">
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="clients.html">For Clients</a>
+          <a href="candidates.html">For Candidates</a>
+          <a href="process.html">Our Process</a>
+          <a href="privacy.html">Privacy Policy</a>
+        </div>
         <div class="social-links" aria-label="Social media">
           <a class="social-icon" href="https://instagram.com" target="_blank" rel="noreferrer noopener" aria-label="Instagram">
             <span>IG</span>
