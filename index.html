@@ -72,7 +72,7 @@
                         <p>Focused, high-fit candidate sets.</p>
                     </article>
                     <article class="card">
-                        <span class="card-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"/><path d="M16 21h5v-5"/></svg></span>
+                        <span class="card-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></span>
                         <h3>Follow-through</h3>
                         <p>Weekly check-ins to ensure full alignment.</p>
                     </article>
@@ -82,37 +82,67 @@
 
         <section class="section">
             <div class="container">
-                <div class="section-head">
+                <div class="section-head section-head-stack">
                     <h2>Our process</h2>
-                    <p class="muted">Five steps, from intake to evaluation.</p>
+                    <p class="muted">A structured, five-step approach from intake to evaluation to connect hiring teams to the right professionals.</p>
                 </div>
-
-                <ol class="steps steps-compact">
-                    <li class="step">
-                        <div class="step-title">Intake</div>
-                        <div class="step-desc">We learn the role, organization, and success profile.</div>
-                    </li>
-                    <li class="step">
-                        <div class="step-title">Refining &amp; selection</div>
-                        <div class="step-desc">We craft the recruitment text and begin targeted outreach.</div>
-                    </li>
-                    <li class="step">
-                        <div class="step-title">Candidate proposal</div>
-                        <div class="step-desc">Shortlist, introductory meetings, then present candidates.</div>
-                    </li>
-                    <li class="step">
-                        <div class="step-title">Interviews</div>
-                        <div class="step-desc">Client selects who to interview and hire.</div>
-                    </li>
-                    <li class="step">
-                        <div class="step-title">Evaluation</div>
-                        <div class="step-desc">Weekly check-ins during the trial period.</div>
-                    </li>
-                </ol>
-
                 <div class="section-cta">
-                    <a class="btn btn-primary" href="process.html">Read the full process</a>
-                    <a class="btn btn-ghost" href="contact.html">Start a conversation</a>
+                    <a class="btn btn-primary" href="process.html">View the full process</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section contact-grid-section">
+            <div class="container">
+                <div class="contact-header">
+                    <h1>Get in touch</h1>
+                    <p class="kicker">
+                        Tell us what you're looking for, hiring support or a new opportunity. We'll respond with next steps and a brief set of clarifying
+                        questions.
+                    </p>
+                </div>
+                <div class="contact-grid">
+                    <div class="contact-left">
+                        <div class="contact-pills">
+                            <div class="contact-pill">
+                                <div class="contact-pill-label">Email us</div>
+                                <a href="mailto:vantagerecruitment@proton.me" class="contact-pill-value">vantagerecruitment@proton.me</a>
+                            </div>
+                            <div class="contact-pill">
+                                <div class="contact-pill-label">Instagram</div>
+                                <a href="https://instagram.com" target="_blank" rel="noreferrer noopener" class="contact-pill-value">Follow us</a>
+                            </div>
+                            <div class="contact-pill">
+                                <div class="contact-pill-label">Twitter</div>
+                                <a href="https://twitter.com" target="_blank" rel="noreferrer noopener" class="contact-pill-value">Follow us @handle</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-right">
+                        <form class="form" action="https://api.web3forms.com/submit" method="post">
+                            <input type="hidden" name="access_key" value="f5156e24-22ba-4a91-a3f7-bd3c04653c0e">
+                            <input type="hidden" name="subject" value="New inquiry — NodeZero Recruitment">
+                            <input type="hidden" name="from_name" value="NodeZero Recruitment website">
+                            <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none">
+                            <div class="field">
+                                <label for="contact-name">Name *</label>
+                                <input id="contact-name" name="name" autocomplete="name" required placeholder="Enter your full name">
+                            </div>
+                            <div class="field">
+                                <label for="contact-company">Company (optional)</label>
+                                <input id="contact-company" name="company" autocomplete="organization" placeholder="Enter your company or organization">
+                            </div>
+                            <div class="field">
+                                <label for="contact-email">Email *</label>
+                                <input id="contact-email" name="email" type="email" autocomplete="email" required placeholder="Enter your email">
+                            </div>
+                            <div class="field">
+                                <label for="contact-message">Message *</label>
+                                <textarea id="contact-message" name="message" required placeholder="Tell us about the role, timeline, and what ideal fit means for you (or tell us what you're looking for as a candidate)."></textarea>
+                            </div>
+                            <button class="btn btn-primary" type="submit">Submit</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </section>

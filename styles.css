@@ -216,6 +216,11 @@ p{ margin: 0 0 12px; }
   flex-wrap: wrap;
   margin-bottom: 16px;
 }
+.section-head-stack{
+  flex-direction: column;
+  align-items: flex-start;
+}
+.section-head-stack .muted{ margin-bottom: 0; }
 .section-cta{ display:flex; gap: 10px; flex-wrap: wrap; margin-top: 16px; }
 
 .grid-3{
