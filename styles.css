@@ -318,6 +318,29 @@ input:focus, textarea:focus{
 .footer-bottom{ padding: 0 0 20px; }
 .brand-row{ display:flex; align-items:center; gap: 10px; }
 
+.social-links{
+  display:flex;
+  gap: 8px;
+  margin-left: 6px;
+}
+.social-icon{
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  border: 1px solid rgba(234,241,247,.18);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size: 13px;
+  background: rgba(234,241,247,.04);
+  color: rgba(234,241,247,.86);
+}
+.social-icon:hover{
+  background: rgba(31,209,196,.18);
+  border-color: rgba(31,209,196,.32);
+  color: #041013;
+}
+
 /* Responsive */
 @media (max-width: 900px){
   .hero-grid{ grid-template-columns: 1fr; }
