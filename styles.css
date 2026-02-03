@@ -391,6 +391,7 @@ input:focus, textarea:focus{
   border-color: rgba(31,209,196,.38);
 }
 .form-note{ margin-top: 10px; }
+.form-note--above{ margin-top: 0; margin-bottom: 8px; }
 
 /* Footer */
 .site-footer{
