@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume Review | Rekruteer</title>
+  <meta name="description" content="Get an AI-powered review of your CV or resume. Score, feedback, and actionable suggestions.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://api.web3forms.com; form-action 'self' https://api.web3forms.com; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; upgrade-insecure-requests">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="permissions-policy" content="camera=(), microphone=(), geolocation=()">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/" aria-label="Rekruteer home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-text">Rekruteer</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a class="nav-link" href="/">Home</a>
+        <a class="nav-link" href="/clients">For Clients</a>
+        <a class="nav-link" href="/candidates">For Candidates</a>
+        <a class="nav-link" href="/process">Our Process</a>
+        <a class="nav-link nav-cta" href="/contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-head">
+      <div class="container">
+        <p class="eyebrow">For Candidates</p>
+        <h1>Resume Review</h1>
+        <p class="kicker">
+          Paste your CV or resume text for an AI-powered review. Get a score, feedback, and actionable suggestions. Your content is processed in memory only and is never stored.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container resume-review-container">
+        <div id="upload-section" class="resume-upload-card">
+          <div class="resume-upload-inner">
+            <form id="upload-form" class="resume-upload-form">
+              <div class="field">
+                <label for="cv-email">Email *</label>
+                <input type="email" id="cv-email" name="email" required placeholder="your@email.com" autocomplete="email">
+              </div>
+              <div class="field">
+                <label for="cv-text">Paste your CV or resume as text</label>
+                <textarea id="cv-text" name="text" required placeholder="Paste your resume content here (e.g. copy from Word, LinkedIn, or a plain text version). 500–6,000 characters." rows="8" maxlength="6000"></textarea>
+                <span class="form-note" id="char-count-wrapper"><span id="char-count">0</span> / 6,000 characters</span>
+                <span class="resume-min-hint" id="min-hint" role="status">Minimum 500 characters required</span>
+              </div>
+              <p class="resume-disclaimer">Do not include sensitive personal data (e.g. national ID, bank details).</p>
+              <button type="submit" class="btn btn-primary btn-block" id="submit-btn" disabled>Review my resume</button>
+            </form>
+          </div>
+        </div>
+
+        <div id="loading-section" class="resume-loading" hidden>
+          <div class="resume-spinner" aria-hidden="true"></div>
+          <p class="resume-loading-text">Analyzing your resume...</p>
+          <p class="muted small">This usually takes 10–30 seconds.</p>
+        </div>
+
+        <div id="error-section" class="resume-error" hidden>
+          <p class="resume-error-text" id="error-text"></p>
+          <button type="button" class="btn btn-ghost" id="try-again-btn">Try again</button>
+        </div>
+
+        <div id="results-section" class="resume-results" hidden>
+          <div class="resume-score-card">
+            <div class="resume-score-label">Overall score</div>
+            <div class="resume-score-value" id="score-value">-</div>
+            <p class="resume-summary-inline" id="summary-text"></p>
+          </div>
+          <div class="resume-suggestions-block">
+            <h3>Top fixes (by impact)</h3>
+            <ul class="resume-suggestions-list" id="suggestions-list"></ul>
+          </div>
+          <div class="resume-download-row">
+            <p class="resume-privacy-note">
+              Your CV was processed only in memory and was not stored. After you download your review, no copy remains on our servers.
+            </p>
+            <button type="button" class="btn btn-primary" id="download-btn">Download review summary</button>
+          </div>
+          <button type="button" class="btn btn-ghost" id="review-another-btn">Review another resume</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <div class="brand-row">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span class="brand-text">Rekruteer</span>
+        </div>
+        <p class="muted">Clean recruitment. Clear outcomes.</p>
+      </div>
+      <div class="footer-right">
+        <div class="footer-links">
+          <a href="/">Home</a>
+          <a href="/clients">For Clients</a>
+          <a href="/candidates">For Candidates</a>
+          <a href="/process">Our Process</a>
+          <a href="/contact">Contact</a>
+          <a href="/privacy-policy">Privacy Policy</a>
+        </div>
+        <div class="social-links" aria-label="Social media">
+          <a class="social-icon" href="https://instagram.com" target="_blank" rel="noreferrer noopener" aria-label="Instagram">
+            <span>IG</span>
+          </a>
+          <a class="social-icon" href="https://twitter.com" target="_blank" rel="noreferrer noopener" aria-label="Twitter">
+            <span>X</span>
+          </a>
+          <a class="social-icon" href="https://linkedin.com" target="_blank" rel="noreferrer noopener" aria-label="LinkedIn">
+            <span>in</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p class="muted small">© <span id="year">2026</span> Rekruteer. All rights reserved.</p>
+    </div>
+    <script>
+      document.getElementById("year").textContent = String(new Date().getFullYear());
+
+      const MIN_CHARS = 500;
+      const MAX_CHARS = 6000;
+      const form = document.getElementById("upload-form");
+      const textInput = document.getElementById("cv-text");
+      const emailInput = document.getElementById("cv-email");
+      const charCountEl = document.getElementById("char-count");
+      const minHintEl = document.getElementById("min-hint");
+      const submitBtn = document.getElementById("submit-btn");
+
+      function updateCharValidation() {
+        const len = textInput.value.length;
+        charCountEl.textContent = len;
+        const meetsMin = len >= MIN_CHARS;
+        minHintEl.textContent = meetsMin ? "" : len === 0 ? "Minimum 500 characters required" : len + " characters (add " + (MIN_CHARS - len) + " more to reach 500 minimum)";
+        minHintEl.classList.toggle("resume-min-hint--error", !meetsMin);
+        submitBtn.disabled = !meetsMin;
+      }
+
+      textInput.addEventListener("input", updateCharValidation);
+      textInput.addEventListener("paste", () => setTimeout(updateCharValidation, 0));
+      updateCharValidation();
+      const uploadSection = document.getElementById("upload-section");
+      const loadingSection = document.getElementById("loading-section");
+      const errorSection = document.getElementById("error-section");
+      const resultsSection = document.getElementById("results-section");
+      const errorText = document.getElementById("error-text");
+      let lastReview = null;
+
+      function showSection(section) {
+        [uploadSection, loadingSection, errorSection, resultsSection].forEach(el => el.setAttribute("hidden", ""));
+        section.removeAttribute("hidden");
+      }
+
+      function showError(msg) {
+        errorText.textContent = msg;
+        showSection(errorSection);
+      }
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const text = (textInput.value || "").trim();
+        const email = (emailInput.value || "").trim();
+
+        if (!email) {
+          showError("Please enter your email address.");
+          return;
+        }
+        if (text.length < MIN_CHARS || text.length > MAX_CHARS) {
+          return;
+        }
+
+        showSection(loadingSection);
+
+        try {
+          const res = await fetch("/api/review-resume", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ text: text, email: email }),
+          });
+          const data = await res.json();
+
+          if (!res.ok) {
+            showError(data.error || "Something went wrong. Please try again.");
+            return;
+          }
+
+          lastReview = data;
+          document.getElementById("score-value").textContent = data.score + "/100";
+          document.getElementById("summary-text").textContent = data.summary || "";
+
+          const list = document.getElementById("suggestions-list");
+          list.innerHTML = "";
+          (data.fixes || []).forEach((f, i) => {
+            const li = document.createElement("li");
+            li.className = "resume-suggestion-item";
+            li.innerHTML = "<strong>" + escapeHtml(f.title || "Fix " + (i + 1)) + "</strong> " +
+              escapeHtml(f.description || "");
+            list.appendChild(li);
+          });
+
+          showSection(resultsSection);
+        } catch (err) {
+          showError("Network error. Please check your connection and try again.");
+        }
+      });
+
+      document.getElementById("try-again-btn").addEventListener("click", () => {
+        showSection(uploadSection);
+      });
+
+      document.getElementById("review-another-btn").addEventListener("click", () => {
+        form.reset();
+        textInput.value = "";
+        updateCharValidation();
+        lastReview = null;
+        showSection(uploadSection);
+      });
+
+      document.getElementById("download-btn").addEventListener("click", () => {
+        if (!lastReview) return;
+        const html = buildReviewHtml(lastReview);
+        const blob = new Blob([html], { type: "text/html" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "resume-review.html";
+        a.click();
+        URL.revokeObjectURL(url);
+      });
+
+      function escapeHtml(s) {
+        const div = document.createElement("div");
+        div.textContent = s;
+        return div.innerHTML;
+      }
+
+      function buildReviewHtml(review) {
+        const fixes = review.fixes || [];
+        const fixesHtml = fixes
+          .map((f, i) => "<li><strong>" + escapeHtml(f.title || "Fix " + (i + 1)) + "</strong>: " +
+            escapeHtml(f.description || "") + "</li>")
+          .join("");
+        return `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Resume Review – Rekruteer</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 640px; margin: 0 auto; padding: 24px; line-height: 1.6; }
+    h1 { font-size: 1.5rem; }
+    .score { font-size: 2rem; font-weight: 700; color: #1fd1c4; }
+    ul { padding-left: 1.25rem; }
+    li { margin-bottom: 8px; }
+  </style>
+</head>
+<body>
+  <h1>Resume Review – Rekruteer</h1>
+  <p class="score">Score: ${escapeHtml(String(review.score))}/100</p>
+  <p>${escapeHtml(review.summary || "")}</p>
+  <h2>Top fixes (by impact)</h2>
+  <ul>${fixesHtml}</ul>
+  <p><small>Generated by Rekruteer. Your CV was not stored.</small></p>
+</body>
+</html>`;
+      }
+    </script>
+  </footer>
+</body>
+</html>

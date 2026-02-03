@@ -5,7 +5,8 @@
     { "source": "/candidates", "destination": "/candidates.html" },
     { "source": "/process", "destination": "/process.html" },
     { "source": "/contact", "destination": "/contact.html" },
-    { "source": "/privacy-policy", "destination": "/privacy.html" }
+    { "source": "/privacy-policy", "destination": "/privacy.html" },
+    { "source": "/resume-review", "destination": "/resume-review.html" }
   ],
   "headers": [
     {

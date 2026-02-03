@@ -1,0 +1,9 @@
+{
+  "name": "nodezero",
+  "version": "1.0.0",
+  "description": "Rekruteer recruitment website with CV review tool",
+  "dependencies": {
+    "@upstash/redis": "^1.34.0",
+    "openai": "^4.73.0"
+  }
+}

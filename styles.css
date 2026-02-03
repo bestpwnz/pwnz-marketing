@@ -444,6 +444,147 @@ input:focus, textarea:focus{
   color: #041013;
 }
 
+/* Resume Review */
+.resume-review-container {
+  max-width: 640px;
+}
+.resume-upload-card {
+  background: rgba(12,19,26,.66);
+  border: 1px solid rgba(234,241,247,.12);
+  border-radius: var(--radius);
+  padding: 24px;
+}
+.resume-upload-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.resume-upload-note {
+  color: var(--muted);
+  font-size: 14px;
+  margin: 0;
+}
+.resume-upload-or {
+  text-align: center;
+  color: var(--muted);
+  font-size: 14px;
+  margin: 12px 0;
+}
+.resume-min-hint {
+  display: block;
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 6px;
+}
+.resume-min-hint.resume-min-hint--error {
+  color: #e07c7c;
+}
+.resume-disclaimer {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 0 0 16px;
+}
+.resume-upload-form .field {
+  margin-bottom: 16px;
+}
+.resume-upload-form input[type="file"] {
+  padding: 8px 0;
+  cursor: pointer;
+}
+.resume-loading {
+  text-align: center;
+  padding: 48px 24px;
+}
+.resume-spinner {
+  width: 40px;
+  height: 40px;
+  margin: 0 auto 16px;
+  border: 3px solid rgba(234,241,247,.14);
+  border-top-color: var(--teal);
+  border-radius: 50%;
+  animation: resumeSpin 0.8s linear infinite;
+}
+@keyframes resumeSpin {
+  to { transform: rotate(360deg); }
+}
+.resume-loading-text {
+  font-weight: 600;
+  margin: 0 0 4px;
+}
+.resume-error {
+  background: rgba(12,19,26,.66);
+  border: 1px solid rgba(234,241,247,.12);
+  border-radius: var(--radius);
+  padding: 24px;
+  text-align: center;
+}
+.resume-error-text {
+  color: rgba(234,241,247,.9);
+  margin: 0 0 16px;
+}
+.resume-results {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.resume-score-card {
+  background: rgba(12,19,26,.66);
+  border: 1px solid rgba(234,241,247,.12);
+  border-radius: var(--radius);
+  padding: 24px;
+}
+.resume-score-label {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+.resume-score-value {
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--teal);
+  letter-spacing: -0.5px;
+}
+.resume-score-reason,
+.resume-summary-inline {
+  margin: 12px 0 0;
+  color: rgba(234,241,247,.86);
+}
+.resume-summary-block h3,
+.resume-suggestions-block h3 {
+  margin-bottom: 10px;
+}
+.resume-suggestions-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.resume-suggestion-item {
+  padding: 14px;
+  margin-bottom: 10px;
+  background: rgba(12,19,26,.66);
+  border: 1px solid rgba(234,241,247,.12);
+  border-radius: var(--radius-sm);
+}
+.resume-suggestion-item strong {
+  display: block;
+  margin-bottom: 4px;
+}
+.resume-suggestion-category {
+  font-weight: 500;
+  color: var(--muted);
+  font-size: 13px;
+}
+.resume-download-row {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.resume-privacy-note {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 0;
+}
+
 /* Responsive */
 @media (max-width: 900px){
   .hero-grid{ grid-template-columns: 1fr; }
