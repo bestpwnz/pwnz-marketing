@@ -28,6 +28,20 @@ function getClientIp(req) {
     || '0.0.0.0';
 }
 
+const SCORE_BANDS = [
+  { min: 0, max: 40, label: 'Very weak' },
+  { min: 41, max: 60, label: 'Needs major revision' },
+  { min: 61, max: 75, label: 'Solid with gaps' },
+  { min: 76, max: 90, label: 'Strong' },
+  { min: 91, max: 100, label: 'Excellent' },
+];
+
+function getBandForScore(score) {
+  const s = Math.round(Number(score)) || 0;
+  const band = SCORE_BANDS.find(b => s >= b.min && s <= b.max);
+  return band ? band.label : 'Very weak';
+}
+
 function getReviewPrompt(resumeText) {
   const text = resumeText.slice(0, MAX_RESUME_LENGTH);
   return `You are an expert resume reviewer. Analyze the resume and respond in US English. Be structured, direct, and practical. No em dashes. No fluff or buzzwords.
@@ -35,19 +49,34 @@ function getReviewPrompt(resumeText) {
 RESUME TEXT:
 ${text}
 
+Score bands (use these internally when scoring; then set "bandLabel" to the matching label):
+- 0–40: Very weak
+- 41–60: Needs major revision
+- 61–75: Solid with gaps
+- 76–90: Strong
+- 91–100: Excellent
+
 Respond with valid JSON only, no markdown. Use this structure:
 {
-  "score": <number 1-100>,
+  "score": <number 0-100>,
+  "bandLabel": "<exact label from the score band list above, e.g. Needs major revision>",
   "summary": "<overall assessment, 15-20 words max>",
+  "scoreUpgrade": "<1-2 sentences: what would increase the score by about 10 points>",
   "fixes": [
     {
       "title": "<short title>",
-      "description": "<actionable fix, 1-2 sentences max>"
+      "description": "<actionable fix including one micro concrete example; when possible quote or reference a phrase from the resume; avoid generic advice that could apply to any resume>"
     }
   ]
 }
 
-Rules: Score out of 100. Summary must be 15-20 words. Give 3-5 fixes, ordered by impact (highest first). Each fix: direct, actionable. Keep total output under 800 tokens.`;
+Rules:
+- Score out of 100 and set bandLabel to the band that score falls into.
+- Summary: 15-20 words.
+- scoreUpgrade: specific to this resume; one concrete change that would add ~10 points.
+- Give 3-5 fixes, ordered by impact (highest first).
+- Each fix must: (1) include one micro concrete example, (2) when possible reference or quote phrases from the resume, (3) avoid advice that could apply to any resume without customization.
+- Keep total output under 1000 tokens.`;
 }
 
 function getRawBody(req) {
@@ -186,7 +215,7 @@ module.exports = async function handler(req, res) {
         { role: 'user', content: getReviewPrompt(resumeText) },
       ],
       temperature: 0.3,
-      max_tokens: 800,
+      max_tokens: 1100,
     });
 
     const rawResponse = completion.choices[0]?.message?.content?.trim() || '{}';
@@ -206,6 +235,14 @@ module.exports = async function handler(req, res) {
       review.score = 0;
     }
     review.score = Math.min(100, Math.max(0, Math.round(review.score)));
+    review.bandLabel = typeof review.bandLabel === 'string' && review.bandLabel.trim()
+      ? review.bandLabel.trim()
+      : getBandForScore(review.score);
+    if (typeof review.scoreUpgrade !== 'string' || !review.scoreUpgrade.trim()) {
+      review.scoreUpgrade = '';
+    } else {
+      review.scoreUpgrade = review.scoreUpgrade.trim();
+    }
 
     res.setHeader('Content-Type', 'application/json');
     return res.status(200).json(review);

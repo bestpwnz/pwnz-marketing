@@ -550,6 +550,20 @@ input:focus, textarea:focus{
   margin: 12px 0 0;
   color: rgba(234,241,247,.86);
 }
+.resume-band-inline {
+  margin: 6px 0 0;
+  font-size: 14px;
+  color: var(--muted);
+}
+.resume-upgrade-inline {
+  margin: 10px 0 0;
+  padding: 10px 12px;
+  background: rgba(31,209,196,.08);
+  border-left: 3px solid var(--teal);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-size: 14px;
+  color: rgba(234,241,247,.9);
+}
 .resume-summary-block h3,
 .resume-suggestions-block h3 {
   margin-bottom: 10px;
