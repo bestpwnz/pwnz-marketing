@@ -276,6 +276,31 @@ p{ margin: 0 0 12px; }
 }
 .card p{ color: rgba(234,241,247,.78); margin-bottom: 0; }
 
+/* Expertise grid */
+.expertise-card h3{ margin-bottom: 12px; }
+.expertise-list{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: rgba(234,241,247,.78);
+}
+.expertise-list li{
+  position: relative;
+  padding-left: 18px;
+  margin-bottom: 8px;
+}
+.expertise-list li::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--teal);
+}
+.expertise-list li:last-child{ margin-bottom: 0; }
+
 /* Steps */
 .steps{
   list-style: none;
