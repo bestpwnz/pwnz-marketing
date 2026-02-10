@@ -5,8 +5,8 @@
   --text: #eaf1f7;
   --muted: rgba(234,241,247,.72);
   --border: rgba(234,241,247,.14);
-  --teal: #1fd1c4;
-  --teal-2: #11b8ac;
+  --teal: #2EC4B6;
+  --teal-2: #21b4a7;
   --shadow: 0 18px 50px rgba(0,0,0,.35);
   --radius: 16px;
   --radius-sm: 12px;
@@ -637,5 +637,35 @@ input:focus, textarea:focus{
   .grid-4{ grid-template-columns: 1fr; }
   .grid-5{ grid-template-columns: 1fr; }
   .contact-grid{ grid-template-columns: 1fr; gap: 30px; }
-  .header-inner{ align-items: flex-start; }
+  /* Header: stack on mobile so nav has full width and doesn’t compress */
+  .header-inner{
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    padding: 14px 0;
+  }
+  .brand{
+    flex-shrink: 0;
+  }
+  .nav{
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 8px;
+  }
+  .nav-link{
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px){
+  .container{ padding: 0 16px; }
+  .header-inner{ padding: 12px 0; gap: 14px; }
+  .nav{
+    gap: 6px;
+  }
+  .nav-link{
+    padding: 8px 10px;
+    font-size: 13px;
+  }
 }
