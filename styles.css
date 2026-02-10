@@ -11,6 +11,7 @@
   --radius: 16px;
   --radius-sm: 12px;
   --container: 1120px;
+  --header-edge: 20px;
 }
 
 *{ box-sizing:border-box; }
@@ -54,6 +55,10 @@ a:hover{ text-decoration:none; }
   background: rgba(7,12,16,.72);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(234,241,247,.10);
+}
+.site-header .container{
+  padding-left: var(--header-edge);
+  padding-right: var(--header-edge);
 }
 .header-inner{
   display:flex;
@@ -108,6 +113,116 @@ a:hover{ text-decoration:none; }
 }
 .nav-cta:hover{
   background: rgba(31,209,196,.22);
+}
+
+/* Hamburger: hidden on desktop */
+.nav-toggle{
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid rgba(234,241,247,.18);
+  border-radius: 12px;
+  background: rgba(234,241,247,.06);
+  color: var(--text);
+  cursor: pointer;
+}
+.nav-toggle:hover{
+  background: rgba(234,241,247,.10);
+}
+.nav-toggle:focus{
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(31,209,196,.25);
+}
+.nav-toggle-icon{
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+.nav-toggle-icon svg{
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.nav-toggle-close{ display: none; }
+body.nav-open .nav-toggle-menu{ display: none; }
+body.nav-open .nav-toggle-close{ display: block; }
+
+/* Overlay and drawer (mobile only) */
+.nav-overlay{
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(7,12,16,.6);
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+.nav-drawer{
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 101;
+  width: min(300px, 85vw);
+  background: var(--surface);
+  border-left: 1px solid var(--border);
+  padding: 24px;
+  transform: translateX(100%);
+  transition: transform 0.25s ease;
+  overflow-y: auto;
+  flex-direction: column;
+  align-items: stretch;
+}
+.nav-drawer-close{
+  flex-shrink: 0;
+  align-self: flex-end;
+  width: 44px;
+  height: 44px;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 1px solid rgba(234,241,247,.18);
+  border-radius: 12px;
+  background: rgba(234,241,247,.06);
+  color: var(--text);
+  cursor: pointer;
+}
+.nav-drawer-close:hover{
+  background: rgba(234,241,247,.10);
+}
+.nav-drawer-close:focus{
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(31,209,196,.25);
+}
+.nav-drawer-close svg{
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+.nav-drawer-inner{
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.nav-drawer-inner .nav-link{
+  display: block;
+  padding: 14px 16px;
+  border-radius: 12px;
+  font-size: 16px;
+}
+.nav-drawer-inner .nav-link:hover{
+  background: rgba(234,241,247,.08);
+}
+.nav-drawer-inner .nav-cta{
+  margin-top: 12px;
 }
 
 /* Typography */
@@ -429,6 +544,10 @@ input:focus, textarea:focus{
   border-top: 1px solid rgba(234,241,247,.10);
   background: rgba(7,12,16,.55);
 }
+.site-footer .container{
+  padding-left: var(--header-edge);
+  padding-right: var(--header-edge);
+}
 .footer-inner{
   display:flex;
   justify-content: space-between;
@@ -637,35 +756,34 @@ input:focus, textarea:focus{
   .grid-4{ grid-template-columns: 1fr; }
   .grid-5{ grid-template-columns: 1fr; }
   .contact-grid{ grid-template-columns: 1fr; gap: 30px; }
-  /* Header: stack on mobile so nav has full width and doesn’t compress */
+  /* Header: single row, logo left, hamburger right, nav in drawer */
   .header-inner{
-    flex-direction: column;
-    align-items: stretch;
-    gap: 12px;
     padding: 14px 0;
+    gap: 12px;
   }
-  .brand{
-    flex-shrink: 0;
+  .nav-desktop{ display: none !important; }
+  .nav-toggle{ display: flex; }
+  .nav-overlay{ display: block; }
+  .nav-drawer{ display: flex; }
+  body.nav-open{
+    overflow: hidden;
   }
-  .nav{
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    gap: 8px;
+  body.nav-open .nav-overlay{
+    opacity: 1;
+    pointer-events: auto;
   }
-  .nav-link{
-    padding: 8px 12px;
-    font-size: 14px;
+  body.nav-open .nav-drawer{
+    transform: translateX(0);
   }
 }
 
 @media (max-width: 480px){
   .container{ padding: 0 16px; }
-  .header-inner{ padding: 12px 0; gap: 14px; }
-  .nav{
-    gap: 6px;
+  .site-header .container,
+  .site-footer .container{
+    padding-left: var(--header-edge);
+    padding-right: var(--header-edge);
   }
-  .nav-link{
-    padding: 8px 10px;
-    font-size: 13px;
-  }
+  .header-inner{ padding: 12px 0; }
+  .nav-drawer{ width: min(280px, 88vw); padding: var(--header-edge); }
 }

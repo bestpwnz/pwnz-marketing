@@ -12,6 +12,7 @@
     <meta name="permissions-policy" content="camera=(), microphone=(), geolocation=()">
     <link rel="stylesheet" href="styles.css">
     <script defer src="/_vercel/insights/script.js"></script>
+    <script defer src="nav.js"></script>
 </head>
 <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -21,15 +22,32 @@
             <a class="brand" href="/" aria-label="Rekruteer home">
                 <img src="assets/rekruteer-logo.png" alt="Rekruteer" class="brand-logo">
             </a>
-            <nav class="nav" aria-label="Primary">
+            <nav class="nav nav-desktop" aria-label="Primary">
                 <a class="nav-link is-active" href="/" aria-current="page">Home</a>
                 <a class="nav-link" href="/clients">For Clients</a>
                 <a class="nav-link" href="/candidates">For Candidates</a>
                 <a class="nav-link" href="/process">Our Process</a>
                 <a class="nav-link nav-cta" href="/contact">Contact</a>
             </nav>
+            <button type="button" class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-drawer">
+                <span class="nav-toggle-icon nav-toggle-menu" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg></span>
+                <span class="nav-toggle-icon nav-toggle-close" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></span>
+            </button>
         </div>
     </header>
+    <div class="nav-overlay" id="nav-overlay" aria-hidden="true"></div>
+    <div class="nav-drawer" id="nav-drawer" aria-hidden="true">
+        <button type="button" class="nav-drawer-close" aria-label="Close menu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+        </button>
+        <nav class="nav-drawer-inner" aria-label="Primary">
+            <a class="nav-link is-active" href="/" aria-current="page">Home</a>
+            <a class="nav-link" href="/clients">For Clients</a>
+            <a class="nav-link" href="/candidates">For Candidates</a>
+            <a class="nav-link" href="/process">Our Process</a>
+            <a class="nav-link nav-cta" href="/contact">Contact</a>
+        </nav>
+    </div>
 
     <main id="main">
         <section class="hero">
