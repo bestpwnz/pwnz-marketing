@@ -70,11 +70,16 @@ a:hover{ text-decoration:none; }
   letter-spacing: .2px;
 }
 .brand-mark{
-  width: 12px;
-  height: 12px;
-  border-radius: 999px;
-  background: linear-gradient(135deg, var(--teal), #7ff7ef);
-  box-shadow: 0 0 0 4px rgba(31,209,196,.12);
+  display: block;
+  height: 28px;
+  width: auto;
+  object-fit: contain;
+}
+.brand-logo{
+  display: block;
+  height: 32px;
+  width: auto;
+  object-fit: contain;
 }
 .brand-text{ white-space: nowrap; }
 .nav{
