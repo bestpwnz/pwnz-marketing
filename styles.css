@@ -541,6 +541,7 @@ input:focus, textarea:focus{
 /* Footer */
 .site-footer{
   margin-top: 10px;
+  padding: 20px 0;
   border-top: 1px solid rgba(234,241,247,.10);
   background: rgba(7,12,16,.55);
 }
@@ -553,7 +554,7 @@ input:focus, textarea:focus{
   justify-content: space-between;
   gap: 14px;
   flex-wrap: wrap;
-  padding: 20px 0 0 0;
+  padding: 0;
 }
 .footer-right{
   display: flex;
@@ -569,7 +570,7 @@ input:focus, textarea:focus{
 }
 .footer-links a{ color: rgba(234,241,247,.78); padding: 6px 8px; border-radius: 10px; }
 .footer-links a:hover{ background: rgba(234,241,247,.06); color: rgba(234,241,247,.92); }
-.footer-bottom{ padding: 0 0 20px; }
+.footer-bottom{ padding: 0 0 12px; }
 .brand-row{ display:flex; align-items:center; gap: 10px; }
 
 .social-links{
