@@ -30,8 +30,10 @@
     var headerInner = document.querySelector('.header-inner');
     if (!headerInner) return;
 
-    var nav = headerInner.querySelector('.nav-desktop') || headerInner.querySelector('.nav-toggle');
-    if (!nav) return;
+    var navDesktop = headerInner.querySelector('.nav-desktop');
+    var navToggle = headerInner.querySelector('.nav-toggle');
+    var insertTarget = navDesktop || navToggle;
+    if (!insertTarget) return;
 
     var btn = document.createElement('button');
     btn.type = 'button';
@@ -51,9 +53,14 @@
         setTheme('dark');
       }
       btn.setAttribute('aria-label', document.documentElement.getAttribute('data-theme') === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+      setTimeout(function () { btn.blur(); }, 2000);
     });
 
-    headerInner.insertBefore(btn, nav);
+    if (navDesktop) {
+      navDesktop.insertBefore(btn, navDesktop.firstChild);
+    } else {
+      headerInner.insertBefore(btn, navToggle);
+    }
   }
 
   if (document.readyState === 'loading') {
