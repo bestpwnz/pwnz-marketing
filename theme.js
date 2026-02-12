@@ -30,10 +30,8 @@
     var headerInner = document.querySelector('.header-inner');
     if (!headerInner) return;
 
-    var navDesktop = headerInner.querySelector('.nav-desktop');
     var navToggle = headerInner.querySelector('.nav-toggle');
-    var insertTarget = navDesktop || navToggle;
-    if (!insertTarget) return;
+    if (!navToggle) return;
 
     var btn = document.createElement('button');
     btn.type = 'button';
@@ -56,11 +54,7 @@
       setTimeout(function () { btn.blur(); }, 2000);
     });
 
-    if (navDesktop) {
-      navDesktop.insertBefore(btn, navDesktop.firstChild);
-    } else {
-      headerInner.insertBefore(btn, navToggle);
-    }
+    headerInner.insertBefore(btn, navToggle);
   }
 
   if (document.readyState === 'loading') {

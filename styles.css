@@ -92,11 +92,14 @@ a:hover{ text-decoration:none; }
 }
 .brand-text{ white-space: nowrap; }
 .nav{
-  display:flex;
-  align-items:center;
+  display: flex;
+  align-items: center;
   gap: 10px;
   flex-wrap: wrap;
   justify-content: flex-end;
+}
+.nav-desktop{
+  margin-left: auto;
 }
 .nav-link{
   padding: 8px 10px;
@@ -740,26 +743,41 @@ input:focus, textarea:focus{
 .brand-row{ display:flex; align-items:center; gap: 10px; }
 
 .social-links{
-  display:flex;
+  display: flex;
   gap: 8px;
+  align-items: center;
 }
 .social-icon{
-  width: 28px;
-  height: 28px;
-  border-radius: 999px;
-  border: 1px solid var(--border);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size: 13px;
-  background: rgba(28,28,28,.04);
-  color: var(--text);
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  min-height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.social-icon:hover{
-  background: var(--teal-muted);
-  border-color: rgba(46,196,182,.35);
-  color: var(--teal-2);
+.social-icon .social-icon-img{
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  display: block;
+  transition: opacity .2s;
 }
+.social-icon:hover .social-icon-img{
+  opacity: 0.75;
+}
+.social-icon-x{
+  position: relative;
+}
+.social-icon-x .x-icon{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+.social-icon-x .x-dark{ display: none; }
+html[data-theme="dark"] .social-icon-x .x-light{ display: none; }
+html[data-theme="dark"] .social-icon-x .x-dark{ display: block; }
 
 /* Resume Review */
 .resume-review-container {
@@ -938,7 +956,17 @@ input:focus, textarea:focus{
     gap: 12px;
   }
   .nav-desktop{ display: none !important; }
+  .theme-toggle{
+    display: flex;
+    width: 44px;
+    height: 44px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: rgba(28,28,28,.05);
+  }
+  .theme-toggle svg{ width: 22px; height: 22px; }
   .nav-toggle{ display: flex; }
+  .theme-toggle{ margin-left: auto; }
   .nav-overlay{ display: block; }
   .nav-drawer{ display: flex; }
   body.nav-open{
@@ -950,6 +978,23 @@ input:focus, textarea:focus{
   }
   body.nav-open .nav-drawer{
     transform: translateX(0);
+  }
+  html[data-theme="dark"] .theme-toggle{
+    border-color: rgba(234,241,247,.18);
+    background: rgba(234,241,247,.06);
+  }
+  html[data-theme="dark"] .theme-toggle:hover{
+    background: rgba(234,241,247,.10);
+  }
+}
+
+@media (max-width: 640px){
+  .footer-right{
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 16px;
   }
 }
 
@@ -963,6 +1008,16 @@ input:focus, textarea:focus{
   .header-inner{ padding: 12px 0; }
   .nav-drawer{ width: min(280px, 88vw); padding: var(--header-edge); }
   .hero h1{ white-space: normal; }
+  .social-icon{
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    min-height: 44px;
+  }
+  .social-icon .social-icon-img{
+    width: 24px;
+    height: 24px;
+  }
 }
 
 /* Dark / Night mode */
@@ -1021,16 +1076,6 @@ html[data-theme="dark"] textarea:focus{
   border-color: rgba(46,196,182,.38);
 }
 html[data-theme="dark"] .footer-links a:hover{ background: rgba(234,241,247,.06); color: var(--text); }
-html[data-theme="dark"] .social-icon{
-  border-color: rgba(234,241,247,.18);
-  background: rgba(234,241,247,.04);
-  color: rgba(234,241,247,.86);
-}
-html[data-theme="dark"] .social-icon:hover{
-  background: rgba(46,196,182,.18);
-  border-color: rgba(46,196,182,.32);
-  color: #041013;
-}
 html[data-theme="dark"] .btn-secondary{ background: rgba(234,241,247,.08); border-color: rgba(234,241,247,.14); }
 html[data-theme="dark"] .btn-secondary:hover{ background: rgba(234,241,247,.10); }
 html[data-theme="dark"] .pill{ background: rgba(234,241,247,.06); border-color: rgba(234,241,247,.12); color: rgba(234,241,247,.86); }
