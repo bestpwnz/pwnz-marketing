@@ -15,8 +15,10 @@
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta name="permissions-policy" content="camera=(), microphone=(), geolocation=()">
     <link rel="stylesheet" href="styles.css">
+    <script>(function(){var t=localStorage.getItem('rekruteer-theme');if(t==='dark')document.documentElement.setAttribute('data-theme','dark');})();</script>
     <script defer src="/_vercel/insights/script.js"></script>
     <script defer src="nav.js"></script>
+    <script defer src="theme.js"></script>
 </head>
 <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -67,12 +69,27 @@
                         <a class="btn btn-ghost" href="/candidates">I’m a Candidate</a>
                     </div>
                 </div>
+                <div class="hero-visual" aria-hidden="true">
+                    <svg viewBox="0 0 320 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="160" cy="140" r="80" fill="url(#hero-teal-soft)" opacity="0.5"/>
+                        <circle cx="220" cy="100" r="50" fill="url(#hero-teal-soft)" opacity="0.35"/>
+                        <circle cx="100" cy="180" r="45" fill="url(#hero-teal-soft)" opacity="0.4"/>
+                        <path d="M140 120 L180 140 L140 160 L100 140 Z" fill="none" stroke="#2EC4B6" stroke-width="2" stroke-opacity="0.6"/>
+                        <circle cx="160" cy="140" r="8" fill="#2EC4B6"/>
+                        <defs>
+                            <radialGradient id="hero-teal-soft" cx="50%" cy="50%" r="50%">
+                                <stop offset="0%" stop-color="#2EC4B6"/>
+                                <stop offset="100%" stop-color="#2EC4B6" stop-opacity="0"/>
+                            </radialGradient>
+                        </defs>
+                    </svg>
+                </div>
             </div>
         </section>
 
         <section class="section">
             <div class="container">
-                <div class="section-head">
+                <div class="section-head section-head-stack">
                     <h2>What we do</h2>
                     <p class="muted">Connecting hiring teams to the right professionals.</p>
                 </div>
