@@ -121,6 +121,67 @@
         </div>
       </div>
     </section>
+
+    <section class="section contact-grid-section" id="contact-form">
+      <div class="container">
+        <div class="section-head section-head-stack">
+          <h2>Looking to hire top talent?</h2>
+          <p class="muted">Share your hiring needs and we’ll get back to you with next steps.</p>
+        </div>
+        <div class="contact-grid contact-grid-single">
+          <div class="contact-right contact-right-full">
+            <form class="form form-clients" action="https://api.web3forms.com/submit" method="post">
+              <input type="hidden" name="access_key" value="f5156e24-22ba-4a91-a3f7-bd3c04653c0e">
+              <input type="hidden" name="subject" value="New client inquiry — Rekruteer">
+              <input type="hidden" name="from_name" value="Rekruteer Clients page">
+              <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none">
+
+              <div class="form-row form-row-split">
+                <div class="form-col">
+                  <div class="field">
+                    <label for="clients-name">Name *</label>
+                    <input id="clients-name" name="name" autocomplete="name" required placeholder="Enter your full name">
+                  </div>
+                  <div class="field">
+                    <label for="clients-company">Company *</label>
+                    <input id="clients-company" name="company" autocomplete="organization" required placeholder="Enter your company name">
+                  </div>
+                </div>
+                <div class="form-col">
+                  <div class="field">
+                    <label for="clients-position">Job title / position to fill *</label>
+                    <input id="clients-position" name="position" required placeholder="E.g., Community Manager">
+                  </div>
+                  <div class="field">
+                    <label for="clients-email">Email *</label>
+                    <input id="clients-email" name="email" type="email" autocomplete="email" required placeholder="Enter your email">
+                  </div>
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="clients-hire-type">Type of hire *</label>
+                <select id="clients-hire-type" name="hire_type" required>
+                  <option value="" disabled selected>Select type</option>
+                  <option value="Permanent">Permanent</option>
+                  <option value="Temporary">Temporary</option>
+                  <option value="Contract">Contract</option>
+                  <option value="Freelance">Freelance</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="clients-message">Message *</label>
+                <textarea id="clients-message" name="message" required placeholder="Tell us about the role, timeline, and what ideal fit means for your team."></textarea>
+              </div>
+
+              <button class="btn btn-primary" type="submit">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
