@@ -4,6 +4,7 @@
     { "source": "/clients", "destination": "/clients.html" },
     { "source": "/candidates", "destination": "/candidates.html" },
     { "source": "/process", "destination": "/process.html" },
+    { "source": "/about", "destination": "/about.html" },
     { "source": "/contact", "destination": "/contact.html" },
     { "source": "/privacy-policy", "destination": "/privacy.html" },
     { "source": "/resume-review", "destination": "/resume-review.html" }
