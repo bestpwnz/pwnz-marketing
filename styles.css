@@ -37,6 +37,11 @@ a:hover{ text-decoration:none; }
   margin: 0 auto;
   padding: 0 20px;
 }
+.container-full{
+  max-width: 100%;
+  padding-left: var(--header-edge);
+  padding-right: var(--header-edge);
+}
 
 .skip-link{
   position:absolute;
@@ -501,6 +506,125 @@ p{ margin: 0 0 12px; font-family: "Inter", sans-serif; font-weight: 400; color: 
   border-bottom: 1px solid var(--border);
   padding: 40px 0;
 }
+
+/* About page */
+.page-head-about .about-subtitle{ max-width: 65ch; margin-left: auto; margin-right: auto; }
+.page-head-about .about-subtitle + .about-subtitle{ margin-top: 16px; }
+
+.about-section-heading{
+  margin: 0 0 24px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: clamp(20px, 2.2vw, 26px);
+  color: var(--teal);
+}
+
+/* 2. Who We Are: two-column split (text left, value stack card right) */
+.about-who-section{ padding: 48px 0 40px; }
+.about-who-split{
+  display: grid;
+  grid-template-columns: 1fr minmax(240px, 320px);
+  gap: 40px 48px;
+  align-items: start;
+}
+.about-who-left .about-section-heading{ margin-bottom: 20px; }
+.about-who-text p{ margin: 0 0 14px; }
+.about-who-text p:last-child{ margin-bottom: 0; }
+.about-value-stack{
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.about-value-item{
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--text);
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+}
+.about-value-item:last-child{ border-bottom: none; }
+
+/* 3. Mission & Vision: side-by-side cards */
+.about-mission-vision-section{ padding: 40px 0; }
+.about-mission-vision-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: stretch;
+}
+.about-mission-card h3,
+.about-vision-card h3{
+  margin: 0 0 10px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--teal);
+}
+.about-mission-card p,
+.about-vision-card p{ margin: 0; }
+
+/* 4. Our Approach uses .grid-4 + .card (existing) */
+
+/* 5. Closing: centered */
+.about-closing-section{ padding: 48px 0 56px; text-align: center; }
+.about-closing-container{ max-width: 560px; margin: 0 auto; }
+.about-closing-headline{
+  margin: 0 0 16px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: clamp(24px, 3vw, 32px);
+  color: var(--text);
+}
+.about-closing-text{
+  margin: 0 0 24px;
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.5;
+}
+.about-closing-ctas{ justify-content: center; flex-wrap: wrap; }
+
+/* Built by Practitioners: two columns (statement left, card right) */
+.about-practitioners-section{ padding: 40px 0 56px; }
+.about-practitioners-split{
+  display: grid;
+  grid-template-columns: 1fr minmax(260px, 320px);
+  gap: 40px 48px;
+  align-items: start;
+}
+.about-practitioners-left .about-section-heading{ margin-bottom: 20px; }
+.about-practitioners-text p{ margin: 0; }
+.about-practitioners-card{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.about-practitioners-card-title{
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--text);
+}
+.about-practitioners-card-desc{
+  margin: 0;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.45;
+}
+.about-practitioners-link{
+  margin-top: 4px;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--teal);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.about-practitioners-link:hover{ color: var(--teal-2); text-decoration: none; }
+.about-practitioners-link::before{ content: "→ "; }
+
 .section-head{
   display: flex;
   flex-direction: column;
@@ -605,11 +729,11 @@ p{ margin: 0 0 12px; font-family: "Inter", sans-serif; font-weight: 400; color: 
   margin: 0;
   color: var(--muted);
   display: flex;
-  flex-wrap: wrap;
-  gap: 0 16px;
-  row-gap: 6px;
-  justify-content: flex-end;
-  margin-left: auto;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  margin-left: 28%;
+  min-width: 200px;
 }
 .expertise-row .expertise-roles li{
   position: relative;
@@ -626,6 +750,47 @@ p{ margin: 0 0 12px; font-family: "Inter", sans-serif; font-weight: 400; color: 
   border-radius: 50%;
   background: var(--teal);
 }
+
+/* Our process: dual asymmetry blocks (Clients highlighted, Candidates equal footing) */
+.process-dual-section{ padding: 40px 0; }
+.process-dual-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: stretch;
+}
+.process-block{
+  padding: 28px 24px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.process-block-highlight{
+  background: linear-gradient(135deg, rgba(46,196,182,.06) 0%, rgba(46,196,182,.02) 100%);
+  border-color: rgba(46,196,182,.3);
+}
+.process-block-title{
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: clamp(20px, 2.2vw, 26px);
+  color: var(--teal);
+}
+.process-block-title-sm{
+  font-size: clamp(18px, 1.8vw, 22px);
+  color: var(--text);
+}
+.process-block-text{
+  margin: 0;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.5;
+  flex-grow: 1;
+}
+.process-block .btn{ align-self: flex-start; margin-top: 4px; }
 
 /* Steps */
 .steps{
@@ -1040,15 +1205,16 @@ html[data-theme="dark"] .social-icon-x .x-dark{ display: block; }
     flex-shrink: 0;
   }
   .expertise-row .expertise-roles{
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    margin-left: 32px;
-    row-gap: 6px;
+    align-items: flex-start;
+    margin-left: 20%;
   }
   .grid-3{ grid-template-columns: 1fr; }
   .grid-4{ grid-template-columns: 1fr; }
   .grid-5{ grid-template-columns: 1fr; }
+  .about-who-split{ grid-template-columns: 1fr; }
+  .about-mission-vision-grid{ grid-template-columns: 1fr; }
+  .about-practitioners-split{ grid-template-columns: 1fr; }
+  .process-dual-grid{ grid-template-columns: 1fr; }
   .contact-grid{ grid-template-columns: 1fr; gap: 30px; }
   /* Header: single row, logo left, hamburger right, nav in drawer */
   .header-inner{
