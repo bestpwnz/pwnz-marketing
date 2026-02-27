@@ -1357,6 +1357,9 @@ html[data-theme="dark"] .hero-card-image{
   background: linear-gradient(180deg, rgba(46,196,182,.12) 0%, transparent 100%);
   border-bottom-color: rgba(234,241,247,.14);
 }
+html[data-theme="dark"] .hero-icon{
+  filter: brightness(0.55) contrast(1.1);
+}
 html[data-theme="dark"] .section-alt{
   background: linear-gradient(180deg, rgba(234,241,247,.04), rgba(234,241,247,.02));
   border-top: 1px solid rgba(234,241,247,.08);
